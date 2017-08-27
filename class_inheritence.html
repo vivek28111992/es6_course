@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Class Inheritence</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	class Person {
+		constructor(name, title){
+			this.name = name
+			this.title = title
+		}
+
+		displayData(){
+			console.log(`${this.name} is a great ${this.title}`)
+		}
+	}
+
+	class Student extends Person {
+		constructor(){
+			super('Xavi','Midfielder')
+		}
+	}
+
+	let std = new Student
+
+	std.displayData()
+</script>
+
+</body>
+</html>

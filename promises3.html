@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Promises</title>
+</head>
+<body>
+
+<script type="text/javascript">
+let turnOnComputer = () => {
+	return new Promise((resolve, reject) => {
+		reject("First one is rejected")
+	})
+}	
+
+let openBrowser = (msg) => {
+	return new Promise((resolve, reject) => {
+		resolve(msg + " Browser is open")
+	})
+}
+
+let goToThisPage = (msg) => {
+	return new Promise((resolve, reject) => {
+		resolve(msg + " Go to www.google.com")
+	})
+}
+
+turnOnComputer().then((result) => {
+	return openBrowser(result)
+}).then((result) => {
+	return goToThisPage(result)
+}).then((result) => {
+	console.log(`We are done ${result}`)
+}).catch((e) => {
+	console.log(e)
+})	
+
+Promise.all([turnOnComputer(), openBrowser(), goToThisPage()]).then(() => {
+	console.log("DONE")
+}, (error) => {
+	console.log(error)
+})
+</script>
+
+</body>
+</html>

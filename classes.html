@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Classes</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	class Person {
+		constructor(name, title){
+			this.name = name
+			this.title = title
+		}
+
+		displayData(){
+			console.log(`${this.name} is a great ${this.title}`)
+		}
+	}
+
+	let obj = new Person("Messi", "footballer")
+
+	obj.displayData()
+</script>
+
+</body>
+</html>
