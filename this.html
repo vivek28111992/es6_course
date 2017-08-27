@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 this</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	let person = {
+		name: "Edwin",
+		moves: ["running", "walking", "flying"],
+		displayMoves: function() {
+			//console.log(this)
+			let THIS = this
+			this.moves.forEach((move) => {
+				let str = THIS.name + " is " + move + " towards the enemy"
+				console.log(str)
+			})
+		}
+	}
+
+	let person1 = {
+		name: "Edwin",
+		moves: ["running", "walking", "flying"],
+		displayMoves: function() {
+			//console.log(this)
+			this.moves.forEach(function(move) {
+				let str = this.name + " is " + move + " towards the enemy"
+				console.log(str)
+			}.bind(this))
+		}
+	}
+
+	let person2 = {
+		name: "Edwin",
+		moves: ["running", "walking", "flying"],
+		displayMoves(){
+			//console.log(this)
+			this.moves.forEach(move => {
+				let str = this.name + " is " + move + " towards the enemy"
+				console.log(str)
+			})
+		}
+	}
+
+	person.displayMoves()
+	person1.displayMoves()
+	person2.displayMoves()
+</script>
+
+</body>
+</html>

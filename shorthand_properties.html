@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Shorthand Properties</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	let name = "Vivek"
+	let runs = () => {
+		console.log("Vivek is running")
+	}
+
+	let person = {name, runs}
+
+	person.runs()
+
+
+	let name1 = "John"
+	let lastName = "Walker"
+	let person1 = {
+		name1,
+		runs(){
+			console.log("John is running")
+		},
+		walks(){
+			console.log("John is walking")
+		}
+	}
+
+	person1.runs()
+	person1.walks()
+
+</script>
+
+</body>
+</html>

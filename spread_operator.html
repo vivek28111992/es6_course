@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Spread Operator</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	/*let adults = ["John", "Jhonny", "Janardhan"]
+	let kids = ["amar", "akbar", "anthony"]
+	let people = ["Lionel Messi", "Cristiano Ronaldo", ...kids, ...adults]
+
+	console.log(...people)*/
+
+	let sendData = function (username, email, password) {
+		// body...
+		console.log("DATA SEND ", username, email, password)
+	}
+
+	let someData = ["Admin", "admin@xyz.com", "pass123"]
+
+	//sendData(...someData)
+
+	sendData.apply(null, someData)
+
+	let cars = [
+		{brand: "Honda", doors: 2},
+		{brand: "Porche", doors: 4}
+	]
+
+	let newCars = [
+		{brand: "Toyota", doors: 2},
+		{brand: "Mercedes", doors: 4}
+	]
+
+	cars.push(...newCars)
+
+	console.log(cars)
+
+	console.log(...cars)
+</script>
+
+</body>
+</html>

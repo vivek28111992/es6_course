@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Destructor</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+let [bmw,,ford,,ferrari] = ["BMW", "Mercedes", "Ford", "Honda", "Ferrari"]
+
+console.log(bmw, ferrari)
+
+let {name, bio} = {
+	name: "Vivek",
+	bio: "is a programmer"
+}
+
+console.log(name, bio)
+
+let person = {
+	name: "Vivek",
+	bio: "is a programmer"
+}
+
+let displayData = ({name, bio}) => {
+	return `${name} ${bio}`
+}
+
+console.log(displayData(person))
+
+</script>
+
+</body>
+</html>
