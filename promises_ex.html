@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES^ Promises example</title>
+</head>
+<body>
+
+<script type="text/javascript">
+const getRandomUsers = n => {
+	const fetchRandomUsers = fetch(`https://randomuser.me/api/?results=${n}`)
+	//console.log(fetchRandomUsers)
+	fetchRandomUsers.then( data => {
+		data.json().then( users => {
+			//console.log(JSON.stringify(users))
+			users.results.forEach(user => {
+				const {gender, email} = user
+				console.log(`${gender} - ${email}`)
+			})
+		})
+	})
+}	
+
+getRandomUsers(10)
+</script>
+
+</body>
+</html>

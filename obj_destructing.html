@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Object Destructing</title>
+</head>
+<body>
+
+<script type="text/javascript">
+const getUser = () => {
+	return {
+		name: 'John',
+		surname: 'Doe',
+		gender: 'male',
+		address: {
+			country: 'India',
+			city: 'Mumbai',
+			postCode: 400067,
+			fullAddress: {
+				doorNumber: 22,
+				street: 'LA street'
+			}
+		},
+		age: 29
+	}
+}	
+
+const user = getUser()
+
+//const name = user.name
+//const age = user.age
+//const country = user.address.country
+//const doorNumber = user.address.fullAddress.doorNumber
+
+const { name, age, address: { country }, address: { fullAddress: { doorNumber }} } = user
+
+console.log(name)
+console.log(age)
+console.log(country)
+console.log(doorNumber)
+</script>
+
+</body>
+</html>

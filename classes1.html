@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Classes</title>
+</head>
+<body>
+
+<script type="text/javascript">
+class Animal {
+	constructor(name, age){
+		this.name = name
+		this.age = age
+	}
+
+	static iAmStaticMethod(){
+		console.log('I am static method inside Animal class')
+	}
+
+	eat(){
+		console.log(`${this.name} is eating`)
+	}
+
+	sleep(){
+		console.log(`${this.name} is sleeping`)
+	}
+
+	wakeUp(){
+		console.log(`${this.name} is waking up`)
+	}
+
+	logAge(){
+		console.log(`${this.name} is ${this.age} years old`)
+	}
+}	
+
+class Dog extends Animal {
+	constructor(name, age, breed){
+		super(name, age)
+		//console.log(breed)
+		this.breed = breed
+	}
+
+	logBreed() {
+		console.log(`${this.name} is a ${this.breed}`)
+	}
+
+	logAgeFromDog() {
+		super.logAge()
+	}
+}
+
+Animal.iAmStaticMethod()
+const animal = new Animal("messi", 2)
+animal.eat()
+animal.sleep()
+animal.wakeUp()
+animal.logAge()
+
+const mike = new Dog("Mike", 4, "Bulldog")
+mike.logBreed()
+mike.logAgeFromDog()
+</script>
+
+</body>
+</html>

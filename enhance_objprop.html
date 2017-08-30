@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ES6 Enhance Object Property</title>
+</head>
+<body>
+
+<script type="text/javascript">
+const pricePropName = "PRICE"
+
+const calculator = (name, price) => {
+	return {
+		name,
+		add(n1, n2) {
+			return n1 + n2
+		},
+		[pricePropName.toLowerCase()] : price
+	}
+}	
+
+const calc = calculator('casio', 19.99)
+
+console.log(calc.name)
+console.log(calc.add(10, 30))
+console.log(calc.price)
+</script>
+
+</body>
+</html>
